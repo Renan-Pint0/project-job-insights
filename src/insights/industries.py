@@ -7,8 +7,10 @@ def get_unique_industries(path: str) -> List[str]:
     job_industries_list = []
     for job in jobs:
         job_type = job["industry"]
-        if job_type != " ":
+        if job_type not in job_industries_list:
             job_industries_list.append(job_type)
+        if len(job_type) == 0:
+            job_industries_list.remove(job_type)
     return job_industries_list
 
 
