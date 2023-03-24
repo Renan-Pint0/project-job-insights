@@ -18,12 +18,12 @@ def read(path: str) -> List[Dict]:
 
 def get_unique_job_types(path: str) -> List[str]:
     jobs = read(path)
-    job_tip_list = []
+    job_type_list = []
     for job in jobs:
         job_type = job["job_title"]
-        if job_type not in job_tip_list:
-            job_tip_list.append(job_type)
-    return job_tip_list
+        if job_type not in job_type_list:
+            job_type_list.append(job_type)
+    return job_type_list
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
